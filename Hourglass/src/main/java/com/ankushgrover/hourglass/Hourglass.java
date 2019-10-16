@@ -116,6 +116,16 @@ public abstract class Hourglass implements HourglassListener {
     }
 
     /**
+     * Method to stop timer without triggering onTimerFinish().
+     */
+    public void cancelTimer() {
+
+        isRunning = false;
+        handler.removeMessages(MSG);
+
+    }
+
+    /**
      * Method to check whether the timer is paused.
      *
      * @return: true if timer is paused else false.
